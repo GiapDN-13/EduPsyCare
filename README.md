@@ -1,51 +1,121 @@
-# EduPsyCare
-Predicting Student Depression – A data science project aiming to detect and monitor depression risk in students, using Python, scikit-learn, Plotly, and Dash. Includes data analysis, model training, and an interactive dashboard for early intervention.
+# EduPsyCare: Student Depression Prediction and Analysis
 
-# Student Depression Risk Prediction and Monitoring Project
+## Project Description
 
-This project aims to **early detect** and **monitor depression risk** in students through data analysis and machine learning (AI-DS).
+EduPsyCare is a data science and machine learning project designed to predict depression risk among students based on various features such as CGPA, work/study hours, financial stress, work pressure, sleep duration, and other psychological factors.
 
-We use the **Student Depression Dataset** along with a standard process for data processing, model training, evaluation, and internal dashboard deployment.
+This interactive dashboard aims to help school departments monitor, supervise, and identify students at risk of depression for timely support and intervention.
 
----
+## Bookmarks
 
-## Table of Contents
-1. [Introduction](#introduction)
-2. [Directory Structure](#directory-structure)
-3. [How to Install & Set Up Environment](#how-to-install--set-up-environment)
-4. [Project Pipeline](#project-pipeline-process)
-5. [Running Guide](#running-guide)
-6. [Results & Dashboard](#results--dashboard)
-7. [Further Development](#further-development-guide)
-8. [Contribute](#contribute)
-9. [License](#license)
+- [Project Structure](#project-structure)
+- [Installation and Usage](#installation-and-usage)
+- [How to Use the Dashboard](#how-to-use-the-dashboard)
+- [Version Control with Git](#version-control-with-git)
+- [Managing Python Libraries](#managing-python-libraries)
+- [Contact](#contact)
+- [Contribution](#contribution)
 
----
+## Project Structure
 
-## Introduction
-This project addresses the problem of **depression** in students – an important issue for universities and educational institutions. Objectives:
-- **Analyze data** related to academic pressure, finances, lifestyle habits, etc.
-- **Build a model** to predict depression (0/1) with algorithms such as Logistic Regression, Random Forest, etc.
-- **Deploy a dashboard** so that the student affairs department can monitor and intervene early.
+```
+EduPsyCare/
+├── app/
+│   └── app.py                               # Streamlit Dashboard
+├── data/
+│   ├── Student_Depression_Dataset.csv       # Raw Data
+│   └── Student_Depression_Dataset_clean.csv # Cleaned Data after preprocessing
+├── models/
+│   └── depression_model.pkl                 # Best trained model
+├── notebooks/
+│   ├── 00_check_env.ipynb                   # Environment Check Notebook
+│   ├── EduPsyCare_Data_Analysis.ipynb       # EDA and Data Analysis Notebook
+│   └── Model_Training_and_Evaluation.ipynb  # Notebook for model training and evaluation
+├── requirements.txt                         # Python libraries list
+├── .gitignore                               # Ignore unnecessary files
+└── README.md                                # This document
+```
 
-**Demo**:
-(Path or screenshot of dashboard if deployed.)
+## Installation and Usage
 
----
+### System Requirements
 
-## Folder Structure
+- **Python:** >= 3.11
+- **pip:** Python package manager
+- **Git:** Version control tool
+
+### Installation
+
 ```bash
-depression_project/
-├─ data/
-│ └─ Student_Depression_Dataset.csv # Original data
-├─ notebooks/
-│ ├─ 01_EDA.ipynb # Data exploration notebook
-│ └─ 02_Model_Training.ipynb
-├─ models/
-│ └─ depression_model.pkl # Model after training
-├─ app/
-│ └─ app.py # Dashboard code (Streamlit)
-├─ utils/
-│ └─ preprocessing.py # Data processing functions, utilities
-├─ requirements.txt
-└─ README.md # Project description file
+git clone https://github.com/YourUsername/EduPsyCare.git
+cd EduPsyCare
+python -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows
+pip install -r requirements.txt
+```
+
+### Run Dashboard
+
+```bash
+streamlit run app/app.py
+```
+
+## How to Use the Dashboard
+
+The dashboard includes 3 main tabs:
+
+### Prediction
+- Enter student details for depression risk prediction.
+- Displays "Pressure Index" and "Prediction Probability" in gauge charts.
+
+### EDA & Feature Relationships
+- Visualizes data distributions using histogram, boxplot, and scatter matrix.
+- Interactive correlation heatmap for deeper insights.
+
+### Model Evaluation
+- Radar Chart, Confusion Matrix, ROC Curve, and Precision-Recall Curve for performance analysis.
+
+## Version Control with Git
+
+### Commit Changes
+```bash
+git add .
+git commit -m "Update with latest improvements"
+```
+
+### Tagging Versions
+```bash
+git tag -a v1.0.a -m "Version 1.0.a - Final Dashboard Improvements"
+git push origin main --tags
+```
+
+### Deleting Tags (If Needed)
+```bash
+git tag -d v1.1.0
+git push origin :refs/tags/v1.1.0
+```
+
+## Managing Python Libraries
+
+To update the `requirements.txt` file with all necessary libraries:
+
+```bash
+pip install pipreqs nbconvert
+jupyter nbconvert --to script notebooks/Model_Training_and_Evaluation.ipynb
+pipreqs . --force
+pip install -r requirements.txt
+```
+
+## Contact
+
+- **Name:** Dang Nguyen Giap
+- **Email:** dangnguyengiap2004@gmail.com
+- **GitHub:** [GiapDN-13](https://github.com/GiapDN-13)
+
+## Contribution
+
+Contributions are welcome. Feel free to open a pull request or issue to discuss improvements.
+
+Thank you for using EduPsyCare!
+
